@@ -11,7 +11,7 @@ Dejar operativo un entorno de desarrollo reproducible con Python, VS Code, exten
 - [ ] Extensiones: Python, GitLens, Copilot (captura)
 - [ ] Entorno virtual `.venv` creado y activado (captura)
 - [ ] Configuración global de Git (`user.name`, `user.email`) (captura)
-- [ ] Dependencias instaladas: `pip install -r perceptron_lab/requirements.txt`
+- [ ] Dependencias instaladas: `pip install -r semana-05-perceptron/requirements.txt`
 - [ ] Informe LaTeX compilado (`informes/semanas/semana-01/main.tex`)
 
 ## Pasos Resumidos
