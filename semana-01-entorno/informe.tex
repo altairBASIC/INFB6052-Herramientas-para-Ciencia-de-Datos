@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+% --- Paquetes adicionales para mejorar la presentación ---
+\usepackage{ragged2e} 
+\usepackage{array} 
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}} 
+
+% --- Paquetes para URLs y enlaces ---
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xurl} % Para un mejor corte de URLs
+
+% --- Configuración de Hyperref ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black,
+    pdftitle={Propiedades de Familias de Grafos Clásicas},
+    pdfpagemode=FullScreen,
+    breaklinks=true
+}
+\urlstyle{same}
+
+% --- Márgenes y formato ---
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
+\geometry{a4paper,
+          left=2.5cm, right=2.5cm,
+          top=2.5cm,
+          bottom=2.5cm,
+          headheight=3.5cm,
+          headsep=0.5cm
+}
+
+\fancypagestyle{portada}{%
+    \fancyhf{}
+    \fancyhead[L]{%
+        \begin{minipage}{0.7\textwidth}
+            \scriptsize
+            Universidad Tecnológica Metropolitana \\
+            Facultad de Ingeniería \\
+            Departamento de Informática y Computación \\
+            INFB6052 - Herramientas para Ciencia de Datos
+        \end{minipage}%
+    }
+    \fancyhead[R]{
+        \vspace*{-0.5555 cm}
+        \hspace*{0cm}
+        % Asegúrate de tener el archivo 'logo_utem.png' en el mismo directorio
+        \includegraphics[height=1.3 cm]{logo_utem.png} 
+    }
+    
+ \makeatletter
+\renewcommand{\headrule}{%
+  \vspace{0.1cm}
+  \hrule width\headwidth height\headrulewidth
+}
+\makeatother
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[C]{}
+}
+
+
+% --- Configuración del título ---
+\pagestyle{plain}
+\title{
+    \vspace{2cm}
+    \textbf{Informe de Actividad Práctica} \\
+    \textbf{Semana 1: Configuración de Entorno de Desarrollo}
+}
+
+\author{Ignacio Ramírez \\ Antonia Montecinos \\ Cristian Vergara}
+\date{
+    Profesor: Michael Miranda \\
+    Octubre de 2025
+}
+
+\begin{document}
+% --- PORTADA ---
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{portada}
+\end{titlepage}
+
+% --- ÍNDICE ---
+\tableofcontents
+\clearpage
+
+% --- CUERPO DEL INFORME ---
+\section{Introducción}
+El presente informe detalla el proceso de configuración del entorno de desarrollo para el curso INFB6052, correspondiente a la primera semana de laboratorio. El objetivo principal es establecer una base de trabajo estandarizada y robusta, que incluye un sistema de control de versiones con GitHub, un editor de código moderno como Visual Studio Code (VS Code) y un entorno de Python aislado mediante el uso de entornos virtuales.
+
+Esta configuración inicial es crucial para garantizar la reproducibilidad de los proyectos, facilitar la colaboración en equipo y adoptar buenas prácticas de desarrollo desde el comienzo del curso.
+
+\section{Desarrollo y Evidencias}
+A continuación, se describen los pasos ejecutados y se presenta la evidencia visual correspondiente a cada etapa del proceso de instalación y configuración.
+
+\subsection{Creación de Cuenta en GitHub}
+Se procedió a crear una cuenta en la plataforma GitHub, registrando un nombre de usuario y verificando la dirección de correo electrónico institucional. Esta cuenta será el repositorio central para el control de versiones de todos los trabajos prácticos del semestre.
+
+\begin{figure}[H]
+    \centering
+    % captura_github.png' 
+    %\includegraphics[width=0.95\textwidth]{captura_github.png}
+    \caption{Perfil de usuario en GitHub, evidenciando la creación exitosa de la cuenta.}
+    \label{fig:github}
+\end{figure}
+
+\subsection{Instalación de Visual Studio Code y Extensiones}
+Se instaló el editor de código Visual Studio Code desde su sitio web oficial. Posteriormente, se enriqueció su funcionalidad mediante la instalación de tres extensiones clave desde el Marketplace integrado:
+
+\begin{itemize}
+    \item \textbf{Python (Microsoft):} Para soporte avanzado del lenguaje, incluyendo autocompletado, depuración y gestión de entornos.
+    \item \textbf{GitLens (GitKraken):} Para potenciar la integración con Git, permitiendo una visualización detallada del historial de cambios.
+    \item \textbf{GitHub Copilot (GitHub):} Como asistente de programación basado en IA para agilizar la escritura de código.
+\end{itemize}
+
+La Figura \ref{fig:vscode_extensiones} confirma la correcta instalación de estas extensiones en el editor.
+
+\begin{figure}[H]
+    \centering
+    % 'captura_vscode_extensiones.png' 
+    %\includegraphics[width=0.95\textwidth]{captura_vscode_extensiones.png}
+    \caption{Panel de extensiones de VS Code mostrando Python, GitLens y GitHub Copilot instaladas.}
+    \label{fig:vscode_extensiones}
+\end{figure}
+
+\subsection{Creación y Activación de Entorno Virtual}
+Para gestionar las dependencias del proyecto de forma aislada, se creó un entorno virtual de Python utilizando el comando \texttt{python -m venv .venv} en la terminal integrada de VS Code. Una vez creado, el entorno fue activado, lo cual se refleja en el prefijo \texttt{(.venv)} en el \textit{prompt} de la terminal, como se evidencia en la Figura \ref{fig:venv_activado}.
+
+\begin{figure}[H]
+    \centering
+    % REEMPLAZA 'captura_venv_activado.png' 
+    %\includegraphics[width=0.95\textwidth]{captura_venv_activado.png}
+    \caption{Terminal integrada de VS Code con el entorno virtual \texttt{.venv} activado.}
+    \label{fig:venv_activado}
+\end{figure}
+
+\section{Conclusiones}
+La configuración del entorno de desarrollo se completó de manera satisfactoria, cumpliendo con todos los objetivos propuestos para la primera semana de laboratorio. Se cuenta ahora con un espacio de trabajo funcional y profesional, que integra herramientas esenciales para la ciencia de datos.
+
+No se encontraron dificultades mayores durante el proceso. La instalación de las herramientas fue directa y la documentación disponible facilitó cada paso. Este ejercicio práctico ha sido fundamental para asegurar que todos los integrantes del equipo partan de una base técnica común y bien establecida para los desafíos futuros del curso.
+
+\end{document}

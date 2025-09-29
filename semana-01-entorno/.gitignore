@@ -1,0 +1,36 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.loc
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+# Intermediate latexmk files
+latexmk.db
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+~$*
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python caches (if any scripts added later)
+__pycache__/
+*.py[cod]
+
+# Misc
+*.bak
+*.tmp
