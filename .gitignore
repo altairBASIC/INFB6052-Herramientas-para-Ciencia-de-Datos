@@ -40,7 +40,6 @@ __pycache__/
 
 # Ignore otras semanas y labs
 perceptron_lab/
-semana-02-bigdata-git/
 semana-03-casos-uso/
 semana-04-librerias/
 semana-05-perceptron/
