@@ -43,7 +43,7 @@ Cada bloque de visualizaciones incluye ahora una celda adicional de interpretaci
 - Notebook principal: `eda_semana03.ipynb`
 - (Histórico) Recursos de informe: `informes/semanas/semana-04/informe.tex` (solo si se requiere comparar evolución)
 
-## Próximos Pasos Sugeridos (Opcional)
+## Próximos Pasos Sugeridos (para un análisis futuro) 
 - Normalizar / escalar variables antes de modelado.
 - Entrenar un modelo base (Regresión Logística) con variables seleccionadas (ej. radius_mean, concavity_mean, concave_points_mean, texture_mean).
 - Evaluar métricas: precision, recall, F1, matriz de confusión.
