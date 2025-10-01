@@ -127,18 +127,7 @@ model = PerceptronScratch.from_dict(data)
 - Versionar artefactos (hash, timestamp) si se automatiza el pipeline.
 - Añadir pruebas unitarias mínimas (dimensiones, consistencia de predicción) para robustez evolutiva.
 
-## Informe / Documentación Técnica
-
-Al redactar un informe (Markdown / LaTeX) se recomienda incluir:
-
-1. Formulación matemática (regla de decisión y actualización).
-2. Evidencia de convergencia en AND (época y estabilización de pesos).
-3. Limitaciones: incapacidad en problemas no linealmente separables (ej. XOR).
-4. Resultados comparativos (tabla métricas + tiempos).
-5. Interpretación de ROC/AUC y estabilidad CV.
-6. Justificación de hiperparámetros seleccionados.
-
-## Próximos Pasos (Extensiones)
+## Próximos Pasos
 
 - Demostrar fallo en XOR y resolver con MLP.
 - Añadir regularización (L1/L2) a versión scratch.
