@@ -38,8 +38,7 @@ __pycache__/
 *.bak
 *.tmp
 
-# Ignore otras semanas y labs
-perceptron_lab/
+# Ignore otras semanas y labs (permitimos perceptron_lab ahora)
 semana-03-casos-uso/
 semana-04-librerias/
 semana-05-perceptron/
