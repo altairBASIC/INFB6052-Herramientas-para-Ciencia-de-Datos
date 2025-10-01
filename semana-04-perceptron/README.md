@@ -37,7 +37,7 @@ La clase `PerceptronScratch` (ver código fuente) ofrece:
 - Métodos principales: `fit`, `predict`, `decision_function`.
 - Diseño pensado para trazabilidad (historial facilita gráficas y diagnóstico de convergencia).
 
-En la Parte 1 se usa una versión mínima; en la Parte 2 se amplía el uso dentro de un pipeline analítico.
+En la Parte 1 se usa una versión mínima derivada de los requerimientos del curso; en la Parte 2 se amplía el uso dentro de un pipeline analítico.
 
 ## Estructura del Notebook
 
