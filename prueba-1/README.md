@@ -29,7 +29,7 @@ Esta primera prueba evalúa los conocimientos y habilidades iniciales del curso 
 
 | Entregable                | Descripción                                                   | Estado            |
 | ------------------------- | -------------------------------------------------------------- | ----------------- |
-| README.md                 | Documento base del proyecto con instrucciones y justificación | ✅ (este archivo) |
+| README.md                 | Documento base del proyecto con instrucciones y justificación | Listo             |
 | Reporte PDF               | Resumen ejecutivo + metodología + resultados                  | TODO              |
 | Notebook(s)               | EDA y/o experimentos (`.ipynb`)                              | TODO              |
 | Script(s) reproducibles   | Ej:`train_perceptron_scratch.py`                             | TODO              |
