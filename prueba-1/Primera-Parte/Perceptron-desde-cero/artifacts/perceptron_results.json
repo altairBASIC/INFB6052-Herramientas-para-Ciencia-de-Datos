@@ -1,0 +1,48 @@
+{
+  "model_parameters": {
+    "learning_rate": 0.01,
+    "n_iterations": 100,
+    "random_state": 42
+  },
+  "learned_parameters": {
+    "weights": [
+      0.01467397729909652,
+      0.0146224731201427
+    ],
+    "bias": 0.0,
+    "converged": true,
+    "total_epochs": 2
+  },
+  "training_history": {
+    "errors_per_epoch": [
+      2,
+      0
+    ]
+  },
+  "performance": {
+    "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "test": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "dataset_info": {
+    "classes": {
+      "0": "Iris-setosa",
+      "1": "Iris-versicolor"
+    },
+    "features": [
+      "petal_length",
+      "petal_width"
+    ],
+    "n_train_samples": 70,
+    "n_test_samples": 30
+  }
+}
