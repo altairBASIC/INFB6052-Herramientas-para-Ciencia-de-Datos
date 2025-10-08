@@ -18,11 +18,9 @@ El proyecto cumple con todos los requisitos del Item 5 de la Primera Prueba (20 
 - Preprocesamiento completo (normalización, train/test split)
 - Implementación desde cero (solo NumPy)
 - Mostrado: inicialización, forward pass, regla de actualización, entrenamiento
-- Gráficos de frontera de decisión y evolución del error
+- Gráficos de frontera de decisión, convergencia y evolución del error
 
----ntera de decision y convergencia
 
----
 
 ## Tabla de Contenidos
 
