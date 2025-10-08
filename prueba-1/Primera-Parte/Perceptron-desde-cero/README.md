@@ -115,7 +115,6 @@ Perceptron-desde-cero/
 |
 ├── README.md                          # Este archivo
 ├── QUICK_START.md                     # Guia rapida de inicio
-├── SUMARIO_PROYECTO.md                # Resumen ejecutivo del proyecto
 ├── requirements.txt                   # Dependencias
 ├── train_perceptron.py                # Script principal de entrenamiento
 ├── download_iris.py                   # Helper para descargar dataset
@@ -661,16 +660,16 @@ Para datos no linealmente separables:
 **Curso:** INFB6052 - Herramientas para Ciencia de Datos  
 **Institución:** Universidad Tecnológica Metropolitana (UTEM)  
 **Fecha:** Octubre 2025  
-**Contexto:** Primera Prueba - Parte 1 - Item 5 (20 puntos)
+**Contexto:** Primera Prueba - Parte 1 - Item 5
 
 **Requisitos cumplidos:**
-- ✓ Dataset linealmente separable (Iris: Setosa vs Versicolor)
-- ✓ Visualización de separabilidad lineal (scatter plot)
-- ✓ Línea de decisión estimativa dibujada
-- ✓ Preprocesamiento completo (normalización, train/test split)
-- ✓ Implementación desde cero (solo NumPy)
-- ✓ Mostrado: inicialización, forward pass, regla de actualización, entrenamiento
-- ✓ Gráficos de frontera de decisión y evolución del error
+- Dataset linealmente separable (Iris: Setosa vs Versicolor)
+- Visualización de separabilidad lineal (scatter plot)
+- Línea de decisión estimativa dibujada
+- Preprocesamiento completo (normalización, train/test split)
+- Implementación desde cero (solo NumPy)
+- Mostrado: inicialización, forward pass, regla de actualización, entrenamiento
+- Gráficos de frontera de decisión y evolución del error
 
 ---
 
