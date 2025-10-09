@@ -1,3 +1,5 @@
 prueba-1/Primera-Parte/comparacion(1)/*.csv filter=lfs diff=lfs merge=lfs -text
 prueba-1/Primera-Parte/comparacion(1)/wikisent2.txt filter=lfs diff=lfs merge=lfs -text
-*.csv filter=lfs diff=lfs merge=lfs -text
+prueba-1/Primera-Parte/PandasvsPySpark/dataset.csv filter=lfs diff=lfs merge=lfs -text
+prueba-1/Primera-Parte/comparacion(1)/fraudTest.csv filter=lfs diff=lfs merge=lfs -text
+prueba-1/Primera-Parte/comparacion(1)/fraudTrain.csv filter=lfs diff=lfs merge=lfs -text
