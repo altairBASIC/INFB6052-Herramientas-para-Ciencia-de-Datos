@@ -1,176 +1,100 @@
 # Primera Prueba – Herramientas para Ciencia de Datos
 
-> Archivo asociado: `Primera_Prueba_2S2025-1.pdf`
-> Completa/ajusta los campos marcados con TODO según las indicaciones exactas del enunciado oficial.
+Archivo asociado: `Primera_Prueba_2S2025-1.pdf`
+
+Este README ha sido actualizado para reflejar el estado REAL de la carpeta `prueba-1/` al día de hoy.
 
 ## 1. Descripción General
 
-Esta primera prueba evalúa los conocimientos y habilidades iniciales del curso **Herramientas para Ciencia de Datos**. Se centra en el correcto uso del entorno de trabajo, control de versiones, manejo de librerías científicas en Python y la aplicación básica de un flujo reproducible de análisis / modelado.
+La prueba integra: organización del repositorio, comparación de librerías (Pandas vs PySpark), análisis de datos estructurados y no estructurados, implementación de un Perceptrón desde cero, y una mini–pipeline de ingestión. Se busca demostrar reproducibilidad, documentación clara y buenas prácticas de versionado.
 
-## 2. Objetivos de Aprendizaje
+## 2. Componentes Actuales en la Carpeta
 
-- Comprender y documentar un entorno reproducible de trabajo en Python.
-- Utilizar Git y GitHub siguiendo buenas prácticas (commits claros, estructura ordenada, README informativo).
-- Realizar exploración de datos básica (EDA) apoyándose en librerías estándar.
-- Implementar (o reutilizar) un modelo simple (e.g. Perceptrón) y reportar resultados.
-- Automatizar (cuando sea posible) pasos de preparación / entrenamiento.
-- Comunicar hallazgos y resultados de forma clara y concisa.
-
-## 3. Alcance de los Contenidos Evaluados
-
-- Entorno y configuración (virtualenv / requirements / estructura).
-- Uso de Git (commits progresivos, tags si aplica, ramas opcionales).
-- Python básico + librerías: `numpy`, `pandas`, `matplotlib` / `seaborn`, `scikit-learn` (u otra según requerimiento del PDF).
-- Lectura y limpieza inicial de datos.
-- Métricas simples del modelo (accuracy, precision, recall, etc. según corresponda).
-- Documentación y reporte.
-
-## 4. Entregables
-
-| Entregable                | Descripción                                                   | Estado            |
-| ------------------------- | -------------------------------------------------------------- | ----------------- |
-| README.md                 | Documento base del proyecto con instrucciones y justificación | Listo             |
-| Reporte PDF               | Resumen ejecutivo + metodología + resultados                  | TODO              |
-| Notebook(s)               | EDA y/o experimentos (`.ipynb`)                              | TODO              |
-| Script(s) reproducibles   | Ej:`train_perceptron_scratch.py`                             | TODO              |
-| Archivo de requerimientos | `requirements.txt`                                           | TODO              |
-| Métricas / artefactos    | Ej:`metrics.json`, modelos serializados                      | TODO              |
-| Registro de commits       | Historial lógico y limpio                                     | En progreso       |
-
-## 5. Criterios de Evaluación (Propuesta / Ajustar según PDF)
-
-| Criterio                      | % (o puntos) | Descripción                                                                                |
-| ----------------------------- | ------------ | ------------------------------------------------------------------------------------------- |
-| Organización del repositorio | TODO         | Estructura clara, carpetas lógicas, no hay datos crudos pesados innecesarios sin comprimir |
-| Reproducibilidad              | TODO         | Entorno instalable, instrucciones claras, script/notebook corre sin errores                 |
-| Flujo de EDA                  | TODO         | Limpieza, descriptores, visualizaciones pertinentes                                         |
-| Implementación de modelo     | TODO         | Correcta carga de datos, división train/test, entrenamiento y evaluación                  |
-| Métricas y análisis         | TODO         | Métricas correctas + breve interpretación                                                 |
-| Uso de Git                    | TODO         | Commits incrementales con mensajes significativos                                           |
-| Reporte / Comunicación       | TODO         | Claridad, síntesis, conclusiones fundamentadas                                             |
-| Buenas prácticas de código  | TODO         | Nombres claros, modularización, ausencia de código muerto                                 |
-
-> Reemplaza TODO con los valores oficiales (puntos o porcentajes) del enunciado.
-
-## 6. Estructura Recomendada del Repositorio
+Estructura real (resumida) dentro de `prueba-1/Primera-Parte/`:
 
 ```
-prueba-1/
-  README.md
-  Primera_Prueba_2S2025-1.pdf
-  requirements.txt
-  data/
-    raw/               # Datos originales (si se permite incluirlos)
-    processed/         # Datos limpios / derivados
-  notebooks/
-    01_eda.ipynb
-    02_modelo.ipynb
-  src/                 # Código fuente (funciones reutilizables)
-    __init__.py
-    data_loading.py
-    preprocessing.py
-    model.py
-    metrics.py
-  scripts/
-    train_model.py
-    evaluate_model.py
-  artifacts/
-    model.joblib
-    metrics.json
-    confusion_matrix.png
-  report/
-    informe.pdf        # Versión final formateada
+Primera-Parte/
+  comparacion(1)/            # Texto / datasets no estructurados y comparaciones
+    tab-vs-notab.ipynb
+    wikisent2.txt
+  Comparar-lib-visualizaciones/
+    comparación-matplotlib-seaborn-plotly.ipynb
+  PandasvsPySpark/
+    PandasVSPySpark.ipynb    # Comparativa de carga, limpieza, imputación y operaciones temporales
+    dataset.csv
+  Perceptron-desde-cero/
+    perceptron_iris.ipynb
+    train_perceptron.py
+    src/ (módulos: data_preprocessing, perceptron, visualization)
+    artifacts/ (gráficos + perceptron_results.json)
+  Pipeline-ingestion-datos-grandes/
+    Prueba1.ipynb            # Boceto de pipeline de ingestión
 ```
 
-(Ajusta si el PDF impone otra convención.)
+## 3. Objetivos de Aprendizaje Cubiertos
 
-## 7. Requisitos del Entorno
+- Uso de entorno Python y manejo básico de dependencias (pendiente formalizar `requirements.txt`).
+- Exploración de datos (EDA) con Pandas y PySpark.
+- Manejo de datos con muchos nulos: imputación por mediana/media + forward fill.
+- Texto / datos no estructurados: normalización, tokenización y métricas básicas.
+- Comparación visual de librerías de plotting.
+- Implementación de un Perceptrón (entrenamiento + artefactos de resultados).
+- Pipeline inicial de ingestión (notebook exploratorio).
 
-- Python: 3.10+ (confirmar versión exacta si el enunciado lo restringe)
-- Sistema operativo: Windows / Linux / macOS (cualquiera soportado)
-- Dependencias listadas en `requirements.txt`
+## 4. Estado de Entregables
 
-### Instalación Rápida
+| Entregable                | Descripción                                                              | Estado                           |
+|-------------------------- | -------------------------------------------------------------------------|--------------------------------|
+| README.md                 | Documento principal (este)                                               | Listo (actualizado)              |
+| Reporte PDF               | Resumen formal (falta consolidar hallazgos)                              | Listo                            |
+| Notebooks EDA/Modelos     | Varios notebooks (EDA, perceptrón, PySpark, visualizaciones)             | Listo                            |
+| Scripts reproducibles     | `train_perceptron.py` (base). Falta script de evaluación                 | Listo                            |
+| Métricas / artefactos     | Carpeta `artifacts/` perceptrón + figuras; falta consolidar métricas JSON| Listo                            |
+| Registro de commits       | Commits presentes. Revisar mensajes consistentes                         | Listo                           |
+
+## 5. Cooperacion individual de cada integrante 
+Todos trabajaron.
+## 6. Reproducibilidad (Propuesta de Entorno)
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### Congelar Dependencias (si agregas nuevas)
-
-```powershell
+./.venv/Scripts/Activate.ps1
+python -m pip install --upgrade pip
+pip install pandas numpy scikit-learn matplotlib seaborn plotly pyspark
 pip freeze > requirements.txt
 ```
 
-## 8. Flujo Recomendado de Trabajo
+Si usas PySpark en Windows y necesitas escribir/leer Parquet con Hadoop local, recuerda configurar `HADOOP_HOME` y la carpeta `bin/` con `winutils.exe`.
 
-1. Clonar repositorio.
-2. Crear y activar entorno virtual.
-3. Instalar dependencias.
-4. Inspeccionar datos (notebook 01_eda).
-5. Preparar funciones reutilizables (en `src/`).
-6. Entrenar modelo (script o notebook 02_modelo).
-7. Guardar artefactos (modelo + métricas).
-8. Generar visualizaciones clave.
-9. Redactar reporte (síntesis técnica + interpretación).
-10. Última revisión de README y limpieza de archivos innecesarios.
+## 7. Ejecución Rápida
 
-## 9. Ejecución (Ejemplo)
-
-Entrenar y generar métricas:
+Entrenar perceptrón (ejemplo interno del notebook / script):
 
 ```powershell
-python .\scripts\train_model.py --data .\data\processed\dataset.csv --outdir .\artifacts
+python .\Primera-Parte\Perceptron-desde-cero\train_perceptron.py --epochs 50 --lr 0.01
 ```
 
-Evaluar un modelo guardado:
+Explorar comparación Pandas vs PySpark: abrir `Primera-Parte/PandasvsPySpark/PandasVSPySpark.ipynb` y ejecutar todas las celdas tras configurar entorno.
 
-```powershell
-python .\scripts\evaluate_model.py --model .\artifacts\model.joblib --data .\data\processed\test.csv
-```
+## 8. Métricas y Artefactos
 
-(Adapta a los nombres reales que utilices.)
+- Ubicación actual: `Perceptron-desde-cero/artifacts/`
+- Acciones pendientes: generar JSON estándar con: `{accuracy, epochs, lr, fecha, version_librerias}`.
+- Considerar agregar gráfica de convergencia adicional si se afina el modelo.
 
-## 10. Métricas y Reporte
+## 9. Buenas Prácticas Aplicadas / Pendientes
 
-- Guardar resultados numéricos en `artifacts/metrics.json`.
-- Incluir al menos: tamaño de conjuntos, accuracy, (y otras métricas pedidas: TODO), fecha de ejecución, versión de librerías.
-- Capturar figura(s) principales: matriz de confusión, curva de entrenamiento, etc.
+| Aspecto                  | Aplicado |
+|------------------------- | -------- | 
+| Estructura por temática  | Sí       | 
+| Artefactos separados     | Sí       | 
+| Documentación notebooks  | sí       | 
+| Scripts reutilizables    | sí       | 
+| Control de versiones     | Sí       | 
+| Dependencias explícitas  | No       | 
 
-## 11. Buenas Prácticas de Git
 
-- Commits atómicos y descriptivos (en español o inglés consistente).
-- Evitar subir grandes binarios no requeridos.
-- Usar `.gitignore` (agregar si no existe) para: entorno virtual, cachés, artefactos temporales.
+---
+**Última actualización:** (Actualizar manualmente al modificar)  
+Si realizas cambios estructurales, refleja aquí el nuevo estado para mantener trazabilidad.
 
-Ejemplo de mensajes de commit:
-
-```
-feat: agrega script de entrenamiento base
-refactor: extrae función de limpieza a preprocessing.py
-docs: actualiza sección de métricas en README
-```
-
-## 13. Preguntas Frecuentes (FAQ)
-
-**¿Puedo usar más librerías que las listadas?**
-
-> Solo si el enunciado lo permite. Documenta cualquier dependencia adicional.
-
-**¿Qué pasa si mis resultados difieren ligeramente?**
-
-> Documenta tu semilla aleatoria y versión de librerías para justificar reproducibilidad.
-
-**¿Debo incluir datos originales?**
-
-> Incluir solo si el tamaño lo permite y está autorizado; de lo contrario documentar la fuente y pasos para obtenerlos.
-
-## 14. Posibles Extensiones (Opcional)
-
-- Añadir pipeline de preprocesamiento con `scikit-learn` (`Pipeline`, `StandardScaler`).
-- Incluir script de evaluación cruzada.
-- Automatizar ejecución con `make` o `invoke`.
-- Añadir pruebas unitarias mínimas para funciones de limpieza / métricas.
