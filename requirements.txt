@@ -1,0 +1,16 @@
+dash
+dask[dataframe]
+duckdb
+ipykernel
+joblib
+jupyterlab
+matplotlib
+numpy
+pandas
+plotly
+pyarrow
+pyspark
+pytest
+requests
+scikit-learn
+seaborn
