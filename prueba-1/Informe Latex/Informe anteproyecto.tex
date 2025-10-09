@@ -1,0 +1,176 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENTO COMPLETO ANTEPROYECTO DEL PROYECTO INTEGRADOR
+%
+% ENFOQUE: Pipeline de Herramientas de ML comparando MLP y SVM para el Diagnóstico de Cáncer de Mama
+% DATASET: Breast Cancer Wisconsin (Diagnostic) - UCI
+% INTEGRANTES: Grupo 2
+%
+% Autor: Ignacio Ramírez, Cristian Vergara, Antonia Montecinos
+% Curso: INFB6052 - Herramientas para Cs. de Datos
+% Fecha: Octubre 2025
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{src/formato_utem}
+\usepackage{background} 
+\usepackage{url}        
+\usepackage{hyperref}   
+
+% --- Configuración del Documento ---
+\backgroundsetup{contents={}} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% --- Información para la Portada ---
+\setuniversidad{Universidad Tecnológica Metropolitana}
+\setcarrera{Ingeniería Civil en Ciencia de Datos}
+\setcodcurso{INFB6052}
+\setnombrecurso{Herramientas para Cs. de Datos}
+\setfecha{Segundo Semestre de 2025}
+
+% Títulos específicos para este entregable
+\setencactividad{Informe de Anteproyecto: \\}
+\setdescactividad{Propuesta de un pipeline de herramientas de Machine Learning para el diagnóstico de cáncer de mama, comparando MLP y SVM.}
+
+\begin{document}
+\pagestyle{fancy}
+\makemytitle
+
+\newpage
+
+% --- Inicio del Contenido del Anteproyecto ---
+
+\tituloazul{Propuesta de Anteproyecto: }
+
+%-------------------------------------------------------------------------------
+\section*{(i) Estructura del Anteproyecto}
+%-------------------------------------------------------------------------------
+El presente documento sigue la estructura requerida para la propuesta de anteproyecto, la cual se organiza en las siguientes secciones:
+\begin{itemize}
+    \item \textbf{Título Tentativo:} Nombre que encapsula el objetivo principal del proyecto.
+    \item \textbf{Justificación:} Relevancia del problema y su alineación con el enfoque en herramientas de Machine Learning.
+    \item \textbf{Objetivos:} Metas generales y específicas orientadas a la construcción de un pipeline completo.
+    \item \textbf{Metodología Propuesta:} Descripción de los pasos, desde la gestión de datos hasta el despliegue.
+    \item \textbf{Estado del Arte Breve:} Análisis de trabajos previos para contextualizar el problema.
+    \item \textbf{Cronograma Tentativo:} Planificación temporal de las actividades del proyecto.
+    \item \textbf{Referencias:} Listado de fuentes académicas y técnicas citadas.
+\end{itemize}
+%-------------------------------------------------------------------------------
+\section*{(ii) Título Tentativo del Proyecto}
+%-------------------------------------------------------------------------------
+\textbf{Pipeline de Herramientas de Machine Learning para el Diagnóstico de Cáncer de Mama: Desde la Gestión de Datos hasta el Despliegue de un Prototipo Interactivo.}
+%-------------------------------------------------------------------------------
+\section*{(iii) Justificación}
+%-------------------------------------------------------------------------------
+El diagnóstico temprano y preciso del cáncer de mama es crucial para mejorar los resultados de los tratamientos. El Machine Learning ofrece herramientas poderosas para asistir a los profesionales médicos en esta tarea, analizando datos clínicos para predecir si un tumor es benigno o maligno. Este proyecto se centra en la construcción de un pipeline de herramientas de ciencia de datos robusto y completo para abordar este problema, en lugar de enfocarse únicamente en la complejidad del modelo predictivo.
+
+Se utilizará el dataset "Breast Cancer Wisconsin (Diagnostic)", que contiene características numéricas extraídas de imágenes de biopsias. Este enfoque permite trabajar con datos tabulares estructurados, ideales para comparar el rendimiento de diferentes familias de modelos de clasificación, como las redes neuronales (MLP) y los modelos basados en márgenes (SVM).
+
+La propuesta está directamente alineada con los objetivos del curso "Herramientas para Cs. de Datos". El énfasis se pone en el dominio práctico del ecosistema de herramientas: la gestión de datos con MongoDB, el preprocesamiento y modelado con Scikit-learn, y el despliegue de un prototipo interactivo con Streamlit. El resultado será un sistema funcional de principio a fin, que demuestra un flujo de trabajo de MLOps elemental y reproducible para un problema médico relevante.
+\newpage
+%-------------------------------------------------------------------------------
+\section*{(iv) Objetivos Generales y Específicos}
+%-------------------------------------------------------------------------------
+\subsection*{Objetivo General}
+Desarrollar un pipeline completo y un prototipo funcional para el diagnóstico de cáncer de mama, abarcando desde la gestión de datos tabulares y el entrenamiento comparativo de modelos de clasificación, hasta el despliegue de una interfaz interactiva de predicción.
+
+\subsection*{Objetivos Específicos}
+\begin{enumerate}
+    \item \textbf{Implementar un sistema de gestión de datos} utilizando MongoDB para almacenar los registros de pacientes y sus características clínicas del dataset, facilitando un acceso estructurado.
+    \item \textbf{Desarrollar un pipeline de preprocesamiento de datos}, que incluya el escalado de características (ej. StandardScaler) para preparar los datos numéricos para el entrenamiento de los modelos.
+    \item \textbf{Entrenar y comparar el rendimiento de dos modelos de clasificación:} un Perceptrón Multicapa (MLP) y una Máquina de Vectores de Soporte (SVM), para seleccionar el modelo más performante para el despliegiegue.
+    \item \textbf{Desarrollar y desplegar una aplicación web interactiva con Streamlit} que permita al usuario ingresar los valores de las características de un nuevo caso y obtener una predicción diagnóstica en tiempo real del mejor modelo entrenado.
+\end{enumerate}
+\newpage
+%-------------------------------------------------------------------------------
+\section*{(v) Metodología Inicial Propuesta}
+%-------------------------------------------------------------------------------
+El proyecto se estructurará en módulos secuenciales, cada uno enfocado en una etapa del pipeline de Machine Learning.
+
+\begin{itemize}
+    \item \textbf{Fuente de Datos:} Se utilizará el dataset público \textbf{Breast Cancer Wisconsin (Diagnostic)} del repositorio de UCI Machine Learning.
+    \begin{itemize}
+        \item \textbf{URL:} \url{https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic}
+        \item \textbf{Descripción:} Contiene 569 registros y 30 características numéricas que describen las propiedades de los núcleos celulares. El objetivo es una clasificación binaria (maligno/benigno).
+    \end{itemize}
+    
+    \item \textbf{1. Gestión de Datos:}
+    \begin{itemize}
+        \item \textbf{Herramienta:} MongoDB (con `pymongo`).
+        \item \textbf{Proceso:} Cargar el dataset desde un archivo CSV a una colección en MongoDB. Cada documento representará un caso, almacenando sus 30 características y la etiqueta de diagnóstico.
+    \end{itemize}
+
+    \item \textbf{2. Preparación y Análisis de Datos:}
+    \begin{itemize}
+        \item \textbf{Herramientas:} Pandas, Scikit-learn.
+        \item \textbf{Proceso:} Se leerán los datos desde MongoDB a un DataFrame de Pandas. Se dividirán los datos en conjuntos de entrenamiento y prueba. Se aplicará un escalado estándar (`StandardScaler`) a las características para normalizar sus rangos, un paso crucial para el buen rendimiento tanto del MLP como del SVM.
+    \end{itemize}
+
+    \item \textbf{3. Modelado y Evaluación:}
+    \begin{itemize}
+        \item \textbf{Herramienta:} Scikit-learn.
+        \item \textbf{Proceso:} Se implementará un `MLPClassifier` y un `SVC` (Support Vector Classifier). Ambos modelos se entrenarán con los mismos datos de entrenamiento escalados. Se utilizará validación cruzada para una comparación robusta de su rendimiento. La evaluación final se realizará sobre el conjunto de prueba utilizando métricas como exactitud, precisión, recall, F1-score y la matriz de confusión. El modelo con el mejor desempeño global será seleccionado.
+    \end{itemize}
+
+    \item \textbf{4. Despliegue Interactivo:}
+    \begin{itemize}
+        \item \textbf{Herramienta:} Streamlit.
+        \item \textbf{Proceso:} Se creará una aplicación web con una interfaz que presente 30 campos de entrada (sliders o inputs numéricos). El usuario podrá ingresar valores, y la aplicación aplicará el mismo escalado y usará el modelo final seleccionado (MLP o SVM) para generar una predicción ("Maligno" o "Benigno") y mostrarla en pantalla.
+    \end{itemize}
+\end{itemize}
+\newpage
+%-------------------------------------------------------------------------------
+\section*{(vi) Estado del Arte Breve}
+%-------------------------------------------------------------------------------
+El dataset "Breast Cancer Wisconsin (Diagnostic)" es un benchmark estándar y ampliamente utilizado en la comunidad de Machine Learning para probar y comparar algoritmos de clasificación. La literatura académica presenta numerosos estudios que lo utilizan para validar la eficacia de diferentes modelos.
+
+Un ejemplo representativo es el trabajo de Chaurasia y Pal (2017) \cite{chaurasia2017}, quienes comparan el rendimiento de SMO (un algoritmo para SVM), IBK (k-NN) y árboles de decisión. Su estudio concluyó que el algoritmo basado en SVM obtenía la mayor precisión para la clasificación de los datos. De manera similar, Athar e Ilavarasi (2020) \cite{athar2020} realizaron un estudio comparativo que incluía Regresión Logística y SVM, incorporando además métodos de selección de características para optimizar el rendimiento.
+
+\textbf{Análisis Crítico y Diferenciación:} Estos estudios, y muchos otros similares, son fundamentales para establecer líneas base de rendimiento, pero su objetivo principal es la \textbf{optimización de métricas para encontrar el "mejor" modelo clasificador}. Nuestra propuesta, en cambio, aborda el problema desde la perspectiva de la \textbf{ingeniería de software y las herramientas de datos}. No buscamos superar el estado del arte en precisión, sino construir un \textbf{sistema completo, reproducible y desplegable}. El valor de nuestro trabajo radica en la integración de MongoDB para la gestión de datos, la creación de un pipeline de preprocesamiento robusto y, crucialmente, el despliegue de un prototipo interactivo con Streamlit que materializa el ciclo de vida completo de un proyecto de Machine Learning. Este enfoque en la aplicación práctica de MLOps elementales es el principal diferenciador de nuestra propuesta.
+\newpage
+%-------------------------------------------------------------------------------
+\section*{(vii) Cronograma Tentativo}
+%-------------------------------------------------------------------------------
+Se propone un cronograma de 8 semanas para el desarrollo del proyecto, abarcando desde el 9 de octubre hasta la fecha de entrega final el 4 de diciembre.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{9.5cm}|}
+\hline
+\textbf{Semanas} & \textbf{Actividad / Hito Entregable} \\ \hline
+\textbf{Semanas 1-2} \newline (9 Oct - 22 Oct) & \textbf{Fase de Datos y Entorno:} \newline - Configuración del entorno (MongoDB, Python). \newline - Creación del script para cargar el dataset de cáncer de mama en MongoDB. \newline \textbf{Hito 1:} Base de datos poblada y funcional. \\ \hline
+
+\textbf{Semanas 3-4} \newline (23 Oct - 5 Nov) & \textbf{Preprocesamiento y Modelado Comparativo:} \newline - Desarrollo del script de preprocesamiento (lectura, escalado, división). \newline - Implementación y entrenamiento inicial del MLP y del SVM. \newline \textbf{Hito 2:} Primeros modelos entrenados con resultados preliminares. \\ \hline
+
+\textbf{Semanas 5-6} \newline (6 Nov - 19 Nov) & \textbf{Evaluación y Selección de Modelo:} \newline - Evaluación exhaustiva y comparación de ambos modelos con métricas de clasificación. \newline - Ajuste de hiperparámetros y selección del modelo final. \newline - Guardado del modelo seleccionado (ej. usando `joblib`). \\ \hline
+
+\textbf{Semana 7} \newline (20 Nov - 26 Nov) & \textbf{Despliegue del Prototipo:} \newline - Desarrollo de la interfaz de usuario en Streamlit con los campos de entrada. \newline - Integración del modelo final para realizar predicciones en tiempo real. \newline \textbf{Hito 3:} Prototipo funcional para pruebas. \\ \hline
+
+\textbf{Semana 8} \newline (27 Nov - 3 Dic) & \textbf{Fase Final y Documentación:} \newline - Limpieza del código, organización del repositorio y redacción del informe final. \newline - Preparación de la presentación. \newline \textbf{Entrega Final (4 de Diciembre).} \\ \hline
+\end{tabular}
+\caption{Cronograma de actividades ajustado (8 semanas).}
+\label{tab:cronograma_ajustado}
+\end{table}
+\newpage
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{chaurasia2017}
+Chaurasia, V., \& Pal, S. (2017).
+\textit{A Novel Approach for Breast Cancer Detection using Data Mining Techniques}.
+International Journal of Innovative Research in Computer and Communication Engineering, 5(1), 136-143.
+Disponible en: \url{https://ssrn.com/abstract=2994932}
+
+\bibitem{athar2020}
+Athar, A., \& Ilavarasi, A. K. (2020).
+\textit{A Comparative study of machine learning models for breast cancer prediction}.
+Journal of Physics: Conference Series, 1716, 012052.
+DOI: \href{https://doi.org/10.1088/1742-6596/1716/1/012052}{10.1088/1742-6596/1716/1/012052}
+
+\end{thebibliography}
+
+\end{document}
